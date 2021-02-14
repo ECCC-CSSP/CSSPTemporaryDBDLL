@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CSSPTemporaryDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Contacts">
+          <Key>
+            <PropertyRef Name="ContactID" />
+          </Key>
+          <Property Name="ContactID" Type="int" Nullable="false" />
+          <Property Name="DBCommand" Type="int" Nullable="false" />
+          <Property Name="Id" Type="nvarchar" MaxLength="450" Nullable="false" />
+          <Property Name="ContactTVItemID" Type="int" Nullable="false" />
+          <Property Name="LoginEmail" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Initial" Type="nvarchar" MaxLength="50" />
+          <Property Name="CellNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="CellNumberConfirmed" Type="bit" />
+          <Property Name="WebName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="ContactTitle" Type="int" />
+          <Property Name="IsAdmin" Type="bit" Nullable="false" />
+          <Property Name="EmailValidated" Type="bit" Nullable="false" />
+          <Property Name="Disabled" Type="bit" Nullable="false" />
+          <Property Name="IsNew" Type="bit" Nullable="false" />
+          <Property Name="SamplingPlanner_ProvincesTVItemID" Type="nvarchar" MaxLength="200" />
+          <Property Name="PasswordHash" Type="nvarchar" MaxLength="255" />
+          <Property Name="Token" Type="nvarchar" MaxLength="255" />
+          <Property Name="AccessFailedCount" Type="int" />
+          <Property Name="LastUpdateDate_UTC" Type="smalldatetime" Nullable="false" />
+          <Property Name="LastUpdateContactTVItemID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TVItemUserAuthorizations">
+          <Key>
+            <PropertyRef Name="TVItemUserAuthorizationID" />
+          </Key>
+          <Property Name="TVItemUserAuthorizationID" Type="int" Nullable="false" />
+          <Property Name="DBCommand" Type="int" Nullable="false" />
+          <Property Name="ContactTVItemID" Type="int" Nullable="false" />
+          <Property Name="TVItemID1" Type="int" Nullable="false" />
+          <Property Name="TVItemID2" Type="int" />
+          <Property Name="TVItemID3" Type="int" />
+          <Property Name="TVItemID4" Type="int" />
+          <Property Name="TVAuth" Type="int" Nullable="false" />
+          <Property Name="LastUpdateDate_UTC" Type="smalldatetime" Nullable="false" />
+          <Property Name="LastUpdateContactTVItemID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TVTypeUserAuthorizations">
+          <Key>
+            <PropertyRef Name="TVTypeUserAuthorizationID" />
+          </Key>
+          <Property Name="TVTypeUserAuthorizationID" Type="int" Nullable="false" />
+          <Property Name="DBCommand" Type="int" Nullable="false" />
+          <Property Name="ContactTVItemID" Type="int" Nullable="false" />
+          <Property Name="TVType" Type="int" Nullable="false" />
+          <Property Name="TVAuth" Type="int" Nullable="false" />
+          <Property Name="LastUpdateDate_UTC" Type="smalldatetime" Nullable="false" />
+          <Property Name="LastUpdateContactTVItemID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="CSSPTemporaryDBModelStoreContainer">
+          <EntitySet Name="Contacts" EntityType="Self.Contacts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TVItemUserAuthorizations" EntityType="Self.TVItemUserAuthorizations" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TVTypeUserAuthorizations" EntityType="Self.TVTypeUserAuthorizations" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CSSPTemporaryDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="CSSPTemporaryDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Contacts" EntityType="CSSPTemporaryDBModel.Contact" />
+          <EntitySet Name="TVItemUserAuthorizations" EntityType="CSSPTemporaryDBModel.TVItemUserAuthorization" />
+          <EntitySet Name="TVTypeUserAuthorizations" EntityType="CSSPTemporaryDBModel.TVTypeUserAuthorization" />
+        </EntityContainer>
+        <EntityType Name="Contact">
+          <Key>
+            <PropertyRef Name="ContactID" />
+          </Key>
+          <Property Name="ContactID" Type="Int32" Nullable="false" />
+          <Property Name="DBCommand" Type="Int32" Nullable="false" />
+          <Property Name="Id" Type="String" Nullable="false" MaxLength="450" FixedLength="false" Unicode="true" />
+          <Property Name="ContactTVItemID" Type="Int32" Nullable="false" />
+          <Property Name="LoginEmail" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Initial" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CellNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CellNumberConfirmed" Type="Boolean" />
+          <Property Name="WebName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ContactTitle" Type="Int32" />
+          <Property Name="IsAdmin" Type="Boolean" Nullable="false" />
+          <Property Name="EmailValidated" Type="Boolean" Nullable="false" />
+          <Property Name="Disabled" Type="Boolean" Nullable="false" />
+          <Property Name="IsNew" Type="Boolean" Nullable="false" />
+          <Property Name="SamplingPlanner_ProvincesTVItemID" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="PasswordHash" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Token" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="AccessFailedCount" Type="Int32" />
+          <Property Name="LastUpdateDate_UTC" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="LastUpdateContactTVItemID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TVItemUserAuthorization">
+          <Key>
+            <PropertyRef Name="TVItemUserAuthorizationID" />
+          </Key>
+          <Property Name="TVItemUserAuthorizationID" Type="Int32" Nullable="false" />
+          <Property Name="DBCommand" Type="Int32" Nullable="false" />
+          <Property Name="ContactTVItemID" Type="Int32" Nullable="false" />
+          <Property Name="TVItemID1" Type="Int32" Nullable="false" />
+          <Property Name="TVItemID2" Type="Int32" />
+          <Property Name="TVItemID3" Type="Int32" />
+          <Property Name="TVItemID4" Type="Int32" />
+          <Property Name="TVAuth" Type="Int32" Nullable="false" />
+          <Property Name="LastUpdateDate_UTC" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="LastUpdateContactTVItemID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TVTypeUserAuthorization">
+          <Key>
+            <PropertyRef Name="TVTypeUserAuthorizationID" />
+          </Key>
+          <Property Name="TVTypeUserAuthorizationID" Type="Int32" Nullable="false" />
+          <Property Name="DBCommand" Type="Int32" Nullable="false" />
+          <Property Name="ContactTVItemID" Type="Int32" Nullable="false" />
+          <Property Name="TVType" Type="Int32" Nullable="false" />
+          <Property Name="TVAuth" Type="Int32" Nullable="false" />
+          <Property Name="LastUpdateDate_UTC" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="LastUpdateContactTVItemID" Type="Int32" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CSSPTemporaryDBModelStoreContainer" CdmEntityContainer="CSSPTemporaryDBEntities">
+          <EntitySetMapping Name="Contacts">
+            <EntityTypeMapping TypeName="CSSPTemporaryDBModel.Contact">
+              <MappingFragment StoreEntitySet="Contacts">
+                <ScalarProperty Name="LastUpdateContactTVItemID" ColumnName="LastUpdateContactTVItemID" />
+                <ScalarProperty Name="LastUpdateDate_UTC" ColumnName="LastUpdateDate_UTC" />
+                <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+                <ScalarProperty Name="Token" ColumnName="Token" />
+                <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+                <ScalarProperty Name="SamplingPlanner_ProvincesTVItemID" ColumnName="SamplingPlanner_ProvincesTVItemID" />
+                <ScalarProperty Name="IsNew" ColumnName="IsNew" />
+                <ScalarProperty Name="Disabled" ColumnName="Disabled" />
+                <ScalarProperty Name="EmailValidated" ColumnName="EmailValidated" />
+                <ScalarProperty Name="IsAdmin" ColumnName="IsAdmin" />
+                <ScalarProperty Name="ContactTitle" ColumnName="ContactTitle" />
+                <ScalarProperty Name="WebName" ColumnName="WebName" />
+                <ScalarProperty Name="CellNumberConfirmed" ColumnName="CellNumberConfirmed" />
+                <ScalarProperty Name="CellNumber" ColumnName="CellNumber" />
+                <ScalarProperty Name="Initial" ColumnName="Initial" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LoginEmail" ColumnName="LoginEmail" />
+                <ScalarProperty Name="ContactTVItemID" ColumnName="ContactTVItemID" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="DBCommand" ColumnName="DBCommand" />
+                <ScalarProperty Name="ContactID" ColumnName="ContactID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TVItemUserAuthorizations">
+            <EntityTypeMapping TypeName="CSSPTemporaryDBModel.TVItemUserAuthorization">
+              <MappingFragment StoreEntitySet="TVItemUserAuthorizations">
+                <ScalarProperty Name="LastUpdateContactTVItemID" ColumnName="LastUpdateContactTVItemID" />
+                <ScalarProperty Name="LastUpdateDate_UTC" ColumnName="LastUpdateDate_UTC" />
+                <ScalarProperty Name="TVAuth" ColumnName="TVAuth" />
+                <ScalarProperty Name="TVItemID4" ColumnName="TVItemID4" />
+                <ScalarProperty Name="TVItemID3" ColumnName="TVItemID3" />
+                <ScalarProperty Name="TVItemID2" ColumnName="TVItemID2" />
+                <ScalarProperty Name="TVItemID1" ColumnName="TVItemID1" />
+                <ScalarProperty Name="ContactTVItemID" ColumnName="ContactTVItemID" />
+                <ScalarProperty Name="DBCommand" ColumnName="DBCommand" />
+                <ScalarProperty Name="TVItemUserAuthorizationID" ColumnName="TVItemUserAuthorizationID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TVTypeUserAuthorizations">
+            <EntityTypeMapping TypeName="CSSPTemporaryDBModel.TVTypeUserAuthorization">
+              <MappingFragment StoreEntitySet="TVTypeUserAuthorizations">
+                <ScalarProperty Name="LastUpdateContactTVItemID" ColumnName="LastUpdateContactTVItemID" />
+                <ScalarProperty Name="LastUpdateDate_UTC" ColumnName="LastUpdateDate_UTC" />
+                <ScalarProperty Name="TVAuth" ColumnName="TVAuth" />
+                <ScalarProperty Name="TVType" ColumnName="TVType" />
+                <ScalarProperty Name="ContactTVItemID" ColumnName="ContactTVItemID" />
+                <ScalarProperty Name="DBCommand" ColumnName="DBCommand" />
+                <ScalarProperty Name="TVTypeUserAuthorizationID" ColumnName="TVTypeUserAuthorizationID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
